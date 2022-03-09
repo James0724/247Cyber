@@ -1,0 +1,172 @@
+@import "config";
+@import "hero";
+@import "services";
+@import "footer";
+@import "menu";
+@import "contact";
+
+body {
+	line-height: 1.5;
+	color: $dark;
+	background: $light;
+	font-family: "Roboto Mono", monospace;
+	&::-webkit-scrollbar {
+		width: 5px;
+		height: 5px;
+	}
+	&::-webkit-scrollbar-track {
+		background-color: $secondary;
+	}
+	&::-webkit-scrollbar-thumb {
+		background-color: $blue;
+		border-radius: 10px;
+	}
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+	line-height: 1.1;
+	margin: 0px 0px 10px;
+}
+section {
+	padding: 50px 0;
+	margin: 0px auto;
+}
+// HERO SVG
+.st0 {
+	fill: #ffffff;
+	stroke: #202124;
+	stroke-width: 0.75;
+	stroke-miterlimit: 10;
+}
+.st1 {
+	fill: #202124;
+}
+.st2 {
+	fill: none;
+	stroke: #202124;
+	stroke-width: 0.75;
+	stroke-miterlimit: 10;
+}
+.st3 {
+	fill: #b1cefc;
+}
+.st4 {
+	fill: #5492ed;
+}
+.st5 {
+	fill: #202124;
+	stroke: #202124;
+	stroke-width: 0.75;
+	stroke-miterlimit: 10;
+}
+.st6 {
+	fill: #ffffff;
+}
+.st7 {
+	fill: none;
+}
+.svg-fill {
+	fill: currentColor;
+}
+// END
+
+//HEADING
+.heading {
+	display: flex;
+	font-size: 22px;
+	font-weight: 400;
+	align-items: center;
+	justify-content: center;
+	&::after {
+		content: "";
+		display: block;
+		position: relative;
+		width: 40%;
+		height: 5px;
+		margin-left: 70px;
+		background-color: $secondary;
+	}
+}
+
+.info {
+	display: flex;
+	width: 100%;
+	align-content: center;
+	justify-content: center;
+	&__intro {
+		width: 40%;
+		padding: 20px;
+	}
+	&__text {
+		width: 60%;
+		padding: 20px 40px;
+	}
+}
+.structure {
+	max-width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.info__list {
+	display: grid;
+	grid-column-gap: 10px;
+	grid-row-gap: 10px;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(3, 1fr);
+	.grid-item {
+		text-align: center;
+		padding: 20px;
+		& .grid-item__icon {
+			position: relative;
+			display: inline-block;
+			&::before {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				background-color: $secondary;
+				transform: translate(50%, -15%);
+				z-index: -1;
+			}
+		}
+	}
+}
+
+/* MEDIA QUERY */
+@media (max-width: 767px) {
+	//HEADING
+	.heading {
+		font-size: 20px;
+		position: relative;
+		&::after {
+			content: "";
+			bottom: 0;
+			display: block;
+			position: absolute;
+			width: 90%;
+			margin-right: auto;
+			margin-left: auto;
+			height: 5px;
+			background-color: $secondary;
+		}
+	}
+	.info {
+		flex-direction: column;
+		width: 80%;
+		align-items: center;
+		margin-left: auto;
+		margin-right: auto;
+		&__intro {
+			width: 80%;
+		}
+		&__text {
+			width: 80%;
+			padding: 20px;
+		}
+	}
+}
